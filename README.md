@@ -32,7 +32,10 @@ EventMate is a comprehensive event management platform designed specifically for
 ## Technical Stack
 
 - **Frontend**: React (Create React App), React Router, Tailwind CSS
-- **Backend**: Express.js
+- **Backend**: Vercel Serverless Functions (Node.js)
+- **Database**: JSON file-based (easily replaceable with any database)
+- **Deployment**: Vercel
+- **Authentication**: HMAC-SHA256 signature for QR codes
 
 ## 🚀 Key Features- **Database**: File-based mock DB (`db.json`)
 
@@ -354,7 +357,41 @@ npm run test:integration
 
 This is a proprietary project. Please contact the repository administrators for contribution guidelines.
 
-## 📄 License
+## � Vercel Deployment Guide
+
+EventMate is now configured for seamless deployment on Vercel!
+
+### Quick Deploy Steps:
+
+1. **Fork this repository** on GitHub
+2. **Go to [vercel.com](https://vercel.com)** and sign up/login
+3. **Click "Import Project"** and connect your GitHub repository
+4. **Vercel will automatically detect** the React app and serverless functions
+5. **Deploy!** Your app will be live at `https://your-project-name.vercel.app`
+
+### Project Structure for Vercel:
+
+- **Frontend**: React app in the root directory
+- **API**: Serverless functions in the `/api` directory
+- **Database**: JSON file-based (easily upgradeable to any database)
+- **Configuration**: `vercel.json` handles routing and builds
+
+### Environment Variables (Optional):
+
+Set these in your Vercel dashboard if needed:
+- `REACT_APP_API_URL`: Defaults to `/api` for relative URLs
+
+### Features Ready for Production:
+
+✅ **Serverless API** - No server management needed  
+✅ **Global CDN** - Fast loading worldwide  
+✅ **Automatic HTTPS** - SSL certificates included  
+✅ **Custom Domain** - Easy domain setup  
+✅ **Analytics** - Built-in performance monitoring  
+
+---
+
+## �📄 License
 
 This project is proprietary and not licensed for public use without explicit permission.
 

@@ -1,0 +1,424 @@
+{
+  "sessions": [
+    {
+      "id": "S001",
+      "title": "Introduction to SAP Cloud Platform",
+      "description": "Learn the basics of SAP Cloud Platform and how it can transform your business operations.",
+      "speaker": "John Davis",
+      "speaker_bio": "John is a Senior SAP Cloud Solution Architect with over 10 years of experience.",
+      "start_time": "2025-10-01T09:00:00Z",
+      "end_time": "2025-10-01T10:30:00Z",
+      "location": "Main Hall A",
+      "capacity": 100,
+      "tags": [
+        "cloud",
+        "beginner",
+        "platform",
+        "SAP"
+      ],
+      "popularity": 75,
+      "bookmarks": 45
+    },
+    {
+      "id": "S002",
+      "title": "Advanced S/4HANA Implementation Strategies",
+      "description": "Dive deep into implementation strategies for S/4HANA that maximize ROI and minimize disruption.",
+      "speaker": "Sarah Johnson",
+      "speaker_bio": "Sarah is an Implementation Specialist with expertise in large-scale SAP deployments.",
+      "start_time": "2025-10-01T11:00:00Z",
+      "end_time": "2025-10-01T12:30:00Z",
+      "location": "Main Hall B",
+      "capacity": 80,
+      "tags": [
+        "S/4HANA",
+        "implementation",
+        "enterprise",
+        "advanced"
+      ],
+      "popularity": 65,
+      "bookmarks": 38
+    },
+    {
+      "id": "S003",
+      "title": "AI-Driven Business Process Automation",
+      "description": "Explore how AI technologies can be integrated with SAP systems to automate complex business processes.",
+      "speaker": "Michael Chen",
+      "speaker_bio": "Michael leads the AI Integration team at SAP Labs.",
+      "start_time": "2025-10-01T09:00:00Z",
+      "end_time": "2025-10-01T10:30:00Z",
+      "location": "Tech Theater",
+      "capacity": 60,
+      "tags": [
+        "AI",
+        "automation",
+        "innovation",
+        "machine learning"
+      ],
+      "popularity": 90,
+      "bookmarks": 55
+    },
+    {
+      "id": "S004",
+      "title": "DevOps Best Practices for SAP Environments",
+      "description": "Learn how to implement DevOps methodologies in your SAP development process for faster delivery and higher quality.",
+      "speaker": "Priya Sharma",
+      "speaker_bio": "Priya is a DevOps consultant specializing in SAP ecosystems.",
+      "start_time": "2025-10-01T14:00:00Z",
+      "end_time": "2025-10-01T15:30:00Z",
+      "location": "Workshop Room 1",
+      "capacity": 40,
+      "tags": [
+        "DevOps",
+        "CI/CD",
+        "development",
+        "technical"
+      ],
+      "popularity": 80,
+      "bookmarks": 42
+    },
+    {
+      "id": "S005",
+      "title": "SAP UI5 and Fiori Design Principles",
+      "description": "Master the design principles of SAP Fiori and learn to build responsive UI5 applications.",
+      "speaker": "Carlos Rodriguez",
+      "speaker_bio": "Carlos is a UX/UI specialist focusing on enterprise applications.",
+      "start_time": "2025-10-02T09:00:00Z",
+      "end_time": "2025-10-02T10:30:00Z",
+      "location": "Design Studio",
+      "capacity": 50,
+      "tags": [
+        "UI5",
+        "Fiori",
+        "UX",
+        "frontend",
+        "design"
+      ],
+      "popularity": 70,
+      "bookmarks": 36
+    },
+    {
+      "id": "S006",
+      "title": "SAP Security and Compliance",
+      "description": "Understand the critical aspects of security and compliance in SAP implementations.",
+      "speaker": "Emma Wilson",
+      "speaker_bio": "Emma is a Certified Information Security Manager specializing in SAP security.",
+      "start_time": "2025-10-02T11:00:00Z",
+      "end_time": "2025-10-02T12:30:00Z",
+      "location": "Conference Room A",
+      "capacity": 60,
+      "tags": [
+        "security",
+        "compliance",
+        "governance",
+        "risk management"
+      ],
+      "popularity": 85,
+      "bookmarks": 50
+    },
+    {
+      "id": "S007",
+      "title": "SAP Analytics Cloud for Business Intelligence",
+      "description": "Leverage SAP Analytics Cloud to transform your data into actionable insights.",
+      "speaker": "David Lee",
+      "speaker_bio": "David is an Analytics Consultant with a background in data science.",
+      "start_time": "2025-10-02T14:00:00Z",
+      "end_time": "2025-10-02T15:30:00Z",
+      "location": "Data Lab",
+      "capacity": 70,
+      "tags": [
+        "analytics",
+        "BI",
+        "data visualization",
+        "cloud"
+      ],
+      "popularity": 75,
+      "bookmarks": 40
+    },
+    {
+      "id": "S008",
+      "title": "Blockchain Integration with SAP",
+      "description": "Discover how blockchain technology can be integrated with SAP systems for enhanced transparency and security.",
+      "speaker": "Raj Patel",
+      "speaker_bio": "Raj is a blockchain specialist with expertise in enterprise integration.",
+      "start_time": "2025-10-02T16:00:00Z",
+      "end_time": "2025-10-02T17:30:00Z",
+      "location": "Innovation Hub",
+      "capacity": 45,
+      "tags": [
+        "blockchain",
+        "innovation",
+        "integration",
+        "advanced"
+      ],
+      "popularity": 60,
+      "bookmarks": 30
+    }
+  ],
+  "attendees": [
+    {
+      "id": "A001",
+      "registration_id": "VIBE-2025-1001",
+      "full_name": "Alex Johnson",
+      "email": "alex.johnson@example.com",
+      "mobile": "+1234567890",
+      "category": "Professional",
+      "company": "Tech Innovations Inc.",
+      "designation": "Software Engineer",
+      "food_choice": "Vegetarian",
+      "country": "USA",
+      "gender": "Male",
+      "blood_group": "O+",
+      "emergency_contact": "+1987654321",
+      "interests": [
+        "cloud",
+        "AI",
+        "DevOps"
+      ],
+      "created_at": "2025-09-15T14:30:00Z",
+      "checked_in": false,
+      "bookmarked_sessions": [
+        "S001",
+        "S003",
+        "S004"
+      ]
+    },
+    {
+      "id": "A002",
+      "registration_id": "VIBE-2025-1002",
+      "full_name": "Maria Garcia",
+      "email": "maria.garcia@example.com",
+      "mobile": "+3456789012",
+      "category": "Student",
+      "college": "University of Technology",
+      "education_level": "UG",
+      "year": 3,
+      "food_choice": "Non-vegetarian",
+      "country": "Spain",
+      "gender": "Female",
+      "blood_group": "A+",
+      "emergency_contact": "+3210987654",
+      "interests": [
+        "AI",
+        "machine learning",
+        "UX"
+      ],
+      "created_at": "2025-09-16T10:15:00Z",
+      "checked_in": true,
+      "bookmarked_sessions": [
+        "S003",
+        "S005",
+        "S007"
+      ]
+    },
+    {
+      "id": "A003",
+      "registration_id": "VIBE-2025-1003",
+      "full_name": "Raj Mehta",
+      "email": "raj.mehta@example.com",
+      "mobile": "+9123456789",
+      "category": "Professional",
+      "company": "Global Solutions Ltd.",
+      "designation": "Solution Architect",
+      "food_choice": "Vegetarian",
+      "country": "India",
+      "gender": "Male",
+      "blood_group": "B+",
+      "emergency_contact": "+9198765432",
+      "interests": [
+        "S/4HANA",
+        "integration",
+        "cloud"
+      ],
+      "created_at": "2025-09-16T16:45:00Z",
+      "checked_in": false,
+      "bookmarked_sessions": [
+        "S002",
+        "S004",
+        "S008"
+      ]
+    },
+    {
+      "id": "A004",
+      "registration_id": "VIBE-2025-1004",
+      "full_name": "Sophie Chen",
+      "email": "sophie.chen@example.com",
+      "mobile": "+4567890123",
+      "category": "Student",
+      "college": "National University",
+      "education_level": "PG",
+      "year": 2,
+      "food_choice": "Vegan",
+      "country": "Singapore",
+      "gender": "Female",
+      "blood_group": "O-",
+      "emergency_contact": "+4509876543",
+      "interests": [
+        "analytics",
+        "BI",
+        "AI"
+      ],
+      "created_at": "2025-09-17T09:20:00Z",
+      "checked_in": false,
+      "bookmarked_sessions": [
+        "S003",
+        "S007"
+      ]
+    },
+    {
+      "id": "A005",
+      "registration_id": "VIBE-2025-1005",
+      "full_name": "Daniel Brown",
+      "email": "daniel.brown@example.com",
+      "mobile": "+4912345678",
+      "category": "Professional",
+      "company": "Enterprise Systems GmbH",
+      "designation": "Security Consultant",
+      "food_choice": "Non-vegetarian",
+      "country": "Germany",
+      "gender": "Male",
+      "blood_group": "AB+",
+      "emergency_contact": "+4923456789",
+      "interests": [
+        "security",
+        "compliance",
+        "governance"
+      ],
+      "created_at": "2025-09-17T14:10:00Z",
+      "checked_in": true,
+      "bookmarked_sessions": [
+        "S006",
+        "S008"
+      ]
+    },
+    {
+      "id": "A006",
+      "registration_id": "VIBE-2025-1006",
+      "full_name": "Lisa Wang",
+      "email": "lisa.wang@example.com",
+      "mobile": "+8612345678",
+      "category": "Professional",
+      "company": "Data Insights Co.",
+      "designation": "Data Analyst",
+      "food_choice": "Vegetarian",
+      "country": "China",
+      "gender": "Female",
+      "blood_group": "A-",
+      "emergency_contact": "+8609876543",
+      "interests": [
+        "analytics",
+        "data visualization",
+        "BI"
+      ],
+      "created_at": "2025-09-18T11:30:00Z",
+      "checked_in": false,
+      "bookmarked_sessions": [
+        "S007",
+        "S003"
+      ]
+    },
+    {
+      "id": "A007",
+      "registration_id": "VIBE-2025-1007",
+      "full_name": "Ahmed Hassan",
+      "email": "ahmed.hassan@example.com",
+      "mobile": "+2012345678",
+      "category": "Student",
+      "college": "Cairo Technical Institute",
+      "education_level": "UG",
+      "year": 4,
+      "food_choice": "Halal",
+      "country": "Egypt",
+      "gender": "Male",
+      "blood_group": "B-",
+      "emergency_contact": "+2098765432",
+      "interests": [
+        "UI5",
+        "Fiori",
+        "frontend"
+      ],
+      "created_at": "2025-09-18T15:45:00Z",
+      "checked_in": false,
+      "bookmarked_sessions": [
+        "S005"
+      ]
+    },
+    {
+      "id": "A008",
+      "registration_id": "VIBE-2025-1008",
+      "full_name": "Julia Martinez",
+      "email": "julia.martinez@example.com",
+      "mobile": "+5512345678",
+      "category": "Professional",
+      "company": "Tech Innovators SA",
+      "designation": "DevOps Engineer",
+      "food_choice": "Non-vegetarian",
+      "country": "Brazil",
+      "gender": "Female",
+      "blood_group": "O+",
+      "emergency_contact": "+5598765432",
+      "interests": [
+        "DevOps",
+        "CI/CD",
+        "automation"
+      ],
+      "created_at": "2025-09-19T10:00:00Z",
+      "checked_in": true,
+      "bookmarked_sessions": [
+        "S004",
+        "S006"
+      ]
+    },
+    {
+      "id": "98302566-6861-4b91-8009-3ac9d3200741",
+      "registration_id": "VIBE-2025-1009",
+      "first_name": "Anant",
+      "last_name": "Sharma",
+      "full_name": "Anant Sharma",
+      "email": "1ms22cy006@msrit.edu",
+      "mobile": "09889681656",
+      "category": "Professional",
+      "company": "Student",
+      "designation": "de",
+      "college": "",
+      "education_level": "UG",
+      "year": 1,
+      "food_choice": "Vegetarian",
+      "country": "India",
+      "gender": "Other",
+      "blood_group": "AB+",
+      "emergency_contact": "9899681656",
+      "interests": [
+        "ai & machine learning",
+        "cloud computing"
+      ],
+      "consent": true,
+      "department": "Product",
+      "created_at": "2025-09-27T09:12:48.186Z",
+      "checked_in": false,
+      "bookmarked_sessions": []
+    },
+    {
+      "id": "f65ff32b-6072-4209-bacb-1b57f19a3b1a",
+      "registration_id": "VIBE-2025-1010",
+      "full_name": "Anant Sharma",
+      "email": "anant.sharma.career@gmail.com",
+      "mobile": "09889681656",
+      "category": "Professional",
+      "company": "Amazon",
+      "designation": "Data Engineer",
+      "food_choice": "Vegetarian",
+      "country": "India",
+      "gender": "Male",
+      "blood_group": "A+",
+      "emergency_contact": "9899681656",
+      "interests": [
+        "ai & machine learning",
+        "cloud computing",
+        "mobile development"
+      ],
+      "created_at": "2025-09-27T09:31:32.613Z",
+      "checked_in": false,
+      "bookmarked_sessions": []
+    }
+  ]
+}
