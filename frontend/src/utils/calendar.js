@@ -24,6 +24,35 @@ export const formatTime = (dateString) => {
 };
 
 /**
+ * Adds an event to the selected calendar type
+ * @param {string} type - The type of calendar ('ics', 'google', or 'outlook')
+ * @param {Object} event - Event details with title, description, location, startTime, endTime
+ */
+export const addToCalendar = (type, event) => {
+  const session = {
+    title: event.title,
+    description: event.description,
+    location: event.location,
+    start_time: event.startTime,
+    end_time: event.endTime
+  };
+  
+  switch (type) {
+    case 'ics':
+      downloadICSFile(session);
+      break;
+    case 'google':
+      window.open(createGoogleCalendarUrl(session), '_blank');
+      break;
+    case 'outlook':
+      window.open(createOutlookCalendarUrl(session), '_blank');
+      break;
+    default:
+      console.error('Unsupported calendar type:', type);
+  }
+};
+
+/**
  * Creates ICS file data for a session
  * @param {Object} session - The session object
  * @returns {Promise} Promise resolving to ICS file data URL

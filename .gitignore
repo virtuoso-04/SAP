@@ -1,0 +1,78 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+/frontend/node_modules
+
+# Testing
+/coverage
+
+# Production build files
+/build
+/dist
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional npm cache & logs
+.npm
+.npmrc
+logs
+*.log
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Optional sass cache
+.sass-cache/
+
+# Local Netlify folder
+.netlify
+
+# Optional: Storybook build outputs
+storybook-static/
+
+# Optional: Next.js build output
+.next/
+out/
+
+# Optional: Nuxt.js build output
+.nuxt/
+
+# Optional: Backend files that should not be committed
+/backend/node_modules
+/backend/.env
+/backend/logs
+
+# Optional: Mobile app files (if applicable)
+*.keystore
+*.p12
+*.mobileprovision

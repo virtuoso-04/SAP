@@ -112,6 +112,18 @@ const apiService = {
       console.error('Error downloading CSV:', error);
       throw error;
     }
+  },
+  
+  // Send message to the SIT Concierge chatbot
+  post: async (endpoint, data) => {
+    try {
+      // Send the request to the API
+      const response = await api.post(endpoint, data);
+      return response.data;
+    } catch (error) {
+      console.error(`Error with API POST to ${endpoint}:`, error);
+      throw error;
+    }
   }
 };
 

@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 // Import components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import SITConcierge from './components/SITConcierge';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      
+      {/* Add SIT Concierge Chatbot */}
+      <SITConcierge />
       
       <ToastContainer
         position="bottom-right"

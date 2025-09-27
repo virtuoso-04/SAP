@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SessionDetail from '../components/SessionDetail';
 import apiService from '../services/api';
-import { addToCalendar } from '../utils/calendar';
+import { downloadICSFile, createGoogleCalendarUrl, createOutlookCalendarUrl } from '../utils/calendar';
 
 const SessionDetailPage = () => {
   const { id } = useParams();
@@ -138,13 +138,35 @@ const SessionDetailPage = () => {
   // Handle adding to calendar
   const handleAddToCalendar = (type) => {
     if (session) {
-      addToCalendar(type, {
+      const sessionData = {
         title: session.title,
         description: session.description,
         location: session.location,
-        startTime: new Date(session.start_time),
-        endTime: new Date(session.end_time)
-      });
+        start_time: session.start_time,
+        end_time: session.end_time
+      };
+      
+      try {
+        switch (type) {
+          case 'ics':
+            downloadICSFile(sessionData);
+            toast.success('Calendar file downloaded');
+            break;
+          case 'google':
+            window.open(createGoogleCalendarUrl(sessionData), '_blank');
+            toast.success('Opening Google Calendar');
+            break;
+          case 'outlook':
+            window.open(createOutlookCalendarUrl(sessionData), '_blank');
+            toast.success('Opening Outlook Calendar');
+            break;
+          default:
+            console.error('Unsupported calendar type:', type);
+        }
+      } catch (error) {
+        console.error('Calendar integration error:', error);
+        toast.error('Failed to add event to calendar. Please try again.');
+      }
     }
   };
   

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import chatbotService from '../services/chatbotService';
 
 // Sample FAQ responses for the mock chatbot
 const CHATBOT_RESPONSES = {
@@ -49,6 +50,15 @@ const containerVariants = {
     y: 20,
     scale: 0.95,
     transition: { duration: 0.3 }
+  }
+};
+
+// Animation for the chat window shadow to add depth
+const shadowVariants = {
+  hidden: { boxShadow: '0 5px 10px rgba(0,0,0,0.1)' },
+  visible: { 
+    boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
+    transition: { delay: 0.2, duration: 0.5 }
   }
 };
 
@@ -113,7 +123,7 @@ const SITConcierge = () => {
   }, [messages, isOpen]);
   
   // Handle message submission
-  const handleSendMessage = (message = inputValue) => {
+  const handleSendMessage = async (message = inputValue) => {
     if (!message.trim()) return;
     
     // Add user message
@@ -128,22 +138,46 @@ const SITConcierge = () => {
     setInputValue('');
     setIsTyping(true);
     
-    // Simulate bot typing and response
-    setTimeout(() => {
-      const botResponse = {
-        id: messages.length + 2,
-        type: 'bot',
-        text: getBotResponse(message),
-        time: new Date()
-      };
+    try {
+      // Get response from chatbot service
+      const response = await chatbotService.sendChatbotMessage(message);
       
-      setMessages(prev => [...prev, botResponse]);
-      setIsTyping(false);
-    }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
+      // Add a realistic typing delay based on message length
+      const typingDelay = Math.min(1000 + response.text.length * 10, 2500);
+      
+      setTimeout(() => {
+        const botResponse = {
+          id: messages.length + 2,
+          type: 'bot',
+          text: response.text,
+          time: new Date(),
+          quickReplies: response.quickReplies || [],
+          isLLMResponse: response.isLLMResponse
+        };
+        
+        setMessages(prev => [...prev, botResponse]);
+        setIsTyping(false);
+      }, typingDelay);
+    } catch (error) {
+      console.error('Error getting chatbot response:', error);
+      
+      // Fallback to local responses on error
+      setTimeout(() => {
+        const botResponse = {
+          id: messages.length + 2,
+          type: 'bot',
+          text: getFallbackResponse(message),
+          time: new Date()
+        };
+        
+        setMessages(prev => [...prev, botResponse]);
+        setIsTyping(false);
+      }, 1000);
+    }
   };
   
-  // Get appropriate bot response based on user input
-  const getBotResponse = (message) => {
+  // Get a fallback response if the API call fails
+  const getFallbackResponse = (message) => {
     const normalizedMessage = message.toLowerCase();
     
     // Check for keywords
@@ -247,22 +281,63 @@ const SITConcierge = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-24 right-6 w-full max-w-sm bg-white rounded-apple shadow-2xl z-40 overflow-hidden"
+            className="fixed bottom-24 right-6 w-full max-w-sm bg-white rounded-apple z-40 overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
+            whileHover={{ y: -2 }}
+            style={{ boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-sap-blue to-sap-light-blue text-white">
+            <motion.div 
+              className="flex items-center justify-between p-4 bg-gradient-to-r from-sap-blue to-sap-light-blue text-white"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
               <div className="flex items-center">
-                {renderLogo()}
+                <motion.div
+                  initial={{ rotate: -30, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.3
+                  }}
+                >
+                  {renderLogo()}
+                </motion.div>
                 <div className="ml-3">
-                  <h3 className="font-bold">SIT Concierge</h3>
-                  <div className="flex items-center text-xs">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-1"></span>
-                    <span>Online</span>
-                  </div>
+                  <motion.h3 
+                    className="font-bold"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    SIT Concierge
+                  </motion.h3>
+                  <motion.div 
+                    className="flex items-center text-xs"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <motion.span 
+                      className="w-2 h-2 bg-green-400 rounded-full mr-1"
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        backgroundColor: ["#4ade80", "#22c55e", "#4ade80"]
+                      }}
+                      transition={{ 
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        duration: 2
+                      }}
+                    />
+                    <span>AI Powered</span>
+                  </motion.div>
                 </div>
               </div>
               <motion.button
@@ -276,7 +351,7 @@ const SITConcierge = () => {
                   <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clipRule="evenodd" />
                 </svg>
               </motion.button>
-            </div>
+            </motion.div>
 
             {/* Messages area */}
             <div className="h-96 p-4 overflow-y-auto bg-gray-50">
@@ -299,10 +374,32 @@ const SITConcierge = () => {
                         : 'bg-white shadow-sm text-gray-800 rounded-bl-none'
                     }`}
                   >
-                    <p className="text-sm">{message.text}</p>
+                    <p className="text-sm whitespace-pre-wrap">{message.text}</p>
                     <p className={`text-xs mt-1 ${message.type === 'user' ? 'text-blue-100' : 'text-sap-grey'}`}>
                       {formatTime(message.time)}
                     </p>
+                    
+                    {/* Quick Replies from API or service */}
+                    {message.quickReplies && message.quickReplies.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {message.quickReplies.map((reply, index) => (
+                          <button
+                            key={index}
+                            onClick={() => handleQuickReply(typeof reply === 'string' ? reply : reply.text)}
+                            className="text-xs px-2 py-1 bg-gray-100 text-sap-blue rounded-full hover:bg-gray-200"
+                          >
+                            {typeof reply === 'string' ? reply : reply.text}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    
+                    {/* Badge for AI-generated responses */}
+                    {message.isLLMResponse && (
+                      <div className="mt-1 inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full">
+                        AI Generated
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
