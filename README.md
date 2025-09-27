@@ -1,21 +1,20 @@
 # EventMate — Intelligent Participant Experience (IPX) Hub
 
-
-
-<div align="center">A complete hackathon prototype for the SAP-themed track that enhances the participant experience at SAP events through intelligent registration, personalized session recommendations, and seamless check-in.
-
+<div align="center">
+  <p>A complete hackathon solution that enhances the participant experience at SAP events through intelligent registration, personalized session recommendations, AI-powered assistance, and seamless check-in.</p>
   
+  <p>
+    <img src="https://img.shields.io/badge/EventMate-IPX%20Hub-0A6ED1" alt="EventMate" />
+    <img src="https://img.shields.io/badge/Version-2.0.0-blue" alt="Version" />
+    <img src="https://img.shields.io/badge/License-Proprietary-red" alt="License" />
+    <img src="https://img.shields.io/badge/Platform-Web-lightgrey" alt="Platform" />
+    <img src="https://img.shields.io/badge/Made%20with-React%20+%20Express-61DAFB" alt="Made with" />
+    <img src="https://img.shields.io/badge/UI-Apple+SAP_Hybrid-black" alt="UI Design" />
+  </p>
 
-  ![EventMate](https://img.shields.io/badge/EventMate-IPX%20Hub-0A6ED1)![EventMate Banner](./docs/banner.png)
-
-  ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
-
-  ![License](https://img.shields.io/badge/License-Proprietary-red)## Overview
-
-  ![Platform](https://img.shields.io/badge/Platform-Web-lightgrey)
-  ![Made with](https://img.shields.io/badge/Made%20with-React%20+%20Express-61DAFB)
-
-EventMate is an intelligent event management platform designed specifically for SAP events. It provides a seamless end-to-end experience for attendees, from registration to check-in and session management, with personalized recommendations based on attendee interests.
+  <img src="./docs/banner.png" alt="EventMate Banner" />
+  
+  <p>EventMate is an intelligent event management platform designed specifically for SAP events. It provides a seamless end-to-end experience for attendees, from registration to check-in and session management, with AI-powered personalized recommendations and intelligent assistance.</p>
 </div>
 
 ### Key Features

@@ -1,0 +1,162 @@
+/**
+ * Mock connections data for the NetworkingAssistant component
+ * In a real application, this data would come from the backend API
+ */
+export const mockConnections = [
+  {
+    id: 'user-101',
+    firstName: 'Emily',
+    lastName: 'Chen',
+    jobTitle: 'UX/UI Designer',
+    company: 'SAP Design',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['UI/UX Design', 'Design Systems', 'User Research', 'Figma', 'Prototyping'],
+    sessionMatchScore: 85,
+    requestSent: false
+  },
+  {
+    id: 'user-102',
+    firstName: 'Michael',
+    lastName: 'Rodriguez',
+    jobTitle: 'Senior Developer',
+    company: 'SAP Labs',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['React', 'Cloud Development', 'UI5', 'Architecture', 'Performance Optimization'],
+    sessionMatchScore: 92,
+    requestSent: false
+  },
+  {
+    id: 'user-103',
+    firstName: 'Sarah',
+    lastName: 'Johnson',
+    jobTitle: 'Product Manager',
+    company: 'SAP Product Strategy',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['Product Strategy', 'UX Design', 'Agile', 'Customer Experience', 'Market Research'],
+    sessionMatchScore: 78,
+    requestSent: false
+  },
+  {
+    id: 'user-104',
+    firstName: 'David',
+    lastName: 'Kim',
+    jobTitle: 'Cloud Solutions Architect',
+    company: 'SAP Cloud Platform',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['Cloud Architecture', 'Microservices', 'Kubernetes', 'DevOps', 'API Design'],
+    sessionMatchScore: 65,
+    requestSent: false
+  },
+  {
+    id: 'user-105',
+    firstName: 'Priya',
+    lastName: 'Patel',
+    jobTitle: 'Data Scientist',
+    company: 'SAP Analytics',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['Machine Learning', 'Data Visualization', 'Predictive Analytics', 'Python', 'Big Data'],
+    sessionMatchScore: 70,
+    requestSent: false
+  },
+  {
+    id: 'user-106',
+    firstName: 'Thomas',
+    lastName: 'Schmidt',
+    jobTitle: 'Technical Lead',
+    company: 'Accenture',
+    industry: 'Consulting',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['SAP S/4HANA', 'Enterprise Architecture', 'Digital Transformation', 'Cloud Migration'],
+    sessionMatchScore: 60,
+    requestSent: false
+  },
+  {
+    id: 'user-107',
+    firstName: 'Amanda',
+    lastName: 'Lee',
+    jobTitle: 'Marketing Director',
+    company: 'Johnson & Johnson',
+    industry: 'Healthcare',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['Digital Marketing', 'Brand Strategy', 'Customer Experience', 'SAP Marketing Cloud'],
+    sessionMatchScore: 55,
+    requestSent: false
+  },
+  {
+    id: 'user-108',
+    firstName: 'Raj',
+    lastName: 'Kumar',
+    jobTitle: 'Supply Chain Specialist',
+    company: 'Deloitte',
+    industry: 'Consulting',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['SAP IBP', 'Supply Chain Analytics', 'Logistics', 'Inventory Optimization'],
+    sessionMatchScore: 50,
+    requestSent: false
+  },
+  {
+    id: 'user-109',
+    firstName: 'Jessica',
+    lastName: 'Adams',
+    jobTitle: 'Customer Success Manager',
+    company: 'SAP Customer Experience',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['Customer Success', 'CX Strategy', 'SaaS', 'Customer Retention', 'Onboarding'],
+    sessionMatchScore: 82,
+    requestSent: false
+  },
+  {
+    id: 'user-110',
+    firstName: 'Marco',
+    lastName: 'Rossi',
+    jobTitle: 'Innovation Lead',
+    company: 'SAP Innovation Center',
+    industry: 'Software',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['Blockchain', 'AI/ML', 'IoT', 'Digital Innovation', 'Emerging Technologies'],
+    sessionMatchScore: 88,
+    requestSent: false
+  },
+  {
+    id: 'user-111',
+    firstName: 'Sophia',
+    lastName: 'Brown',
+    jobTitle: 'Startup Founder',
+    company: 'TechFuture',
+    industry: 'Technology',
+    companySize: 'Startup',
+    avatar: null,
+    interests: ['Startups', 'Entrepreneurship', 'Innovation', 'SAP.io', 'Venture Capital'],
+    sessionMatchScore: 45,
+    requestSent: false
+  },
+  {
+    id: 'user-112',
+    firstName: 'Alex',
+    lastName: 'Martinez',
+    jobTitle: 'SAP Consultant',
+    company: 'IBM',
+    industry: 'Consulting',
+    companySize: 'Enterprise',
+    avatar: null,
+    interests: ['SAP Implementation', 'Change Management', 'Business Process', 'ERP'],
+    sessionMatchScore: 72,
+    requestSent: false
+  }
+];

@@ -1,0 +1,52 @@
+.networking-page {
+  .networking-header-content {
+    max-width: 800px;
+    margin: 8px 0 16px;
+    
+    p {
+      line-height: 1.4;
+    }
+  }
+  
+  .networking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .networking-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    
+    [ui5-icon] {
+      font-size: 48px;
+      margin-bottom: 16px;
+      color: var(--sapContent_NonInteractiveIconColor);
+    }
+    
+    h3 {
+      margin-bottom: 12px;
+    }
+    
+    p {
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .networking-page {
+    .networking-container {
+      padding: 16px 8px;
+    }
+    
+    ui5-tabcontainer {
+      width: 100%;
+    }
+  }
+}

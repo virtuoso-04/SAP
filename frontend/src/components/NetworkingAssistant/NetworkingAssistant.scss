@@ -1,0 +1,134 @@
+.networking-assistant {
+  margin: 20px 0;
+  
+  .networking-notifications {
+    margin-bottom: 16px;
+    
+    > div {
+      margin-bottom: 8px;
+    }
+  }
+  
+  .networking-controls {
+    margin-bottom: 20px;
+    
+    .networking-filters {
+      margin-top: 16px;
+      flex-wrap: wrap;
+      
+      button {
+        margin-left: 8px;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  
+  .connection-item {
+    padding: 16px;
+    border-bottom: 1px solid var(--sapList_BorderColor);
+    
+    .connection-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .connection-details {
+      margin-top: 6px;
+    }
+    
+    .connection-tags {
+      margin-top: 8px;
+      gap: 6px;
+    }
+    
+    .connection-actions {
+      display: flex;
+      align-items: center;
+      
+      button {
+        margin-left: 8px;
+      }
+      
+      .match-indicator {
+        background: var(--sapChart_OrderedColor_1);
+        color: var(--sapContent_ContrastTextColor);
+        border-radius: 16px;
+        padding: 4px 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        
+        p {
+          margin: 0;
+          line-height: 1.2;
+          
+          &:first-child {
+            font-size: 14px;
+          }
+          
+          &:last-child {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  
+  .networking-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    
+    [ui5-icon] {
+      font-size: 48px;
+      color: var(--sapContent_NonInteractiveIconColor);
+      margin-bottom: 16px;
+    }
+    
+    button {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .networking-assistant {
+    .connection-item {
+      .connection-main {
+        flex-direction: column;
+      }
+      
+      .connection-actions {
+        margin-top: 12px;
+        justify-content: flex-end;
+        width: 100%;
+      }
+    }
+    
+    .networking-filters {
+      flex-direction: column;
+      
+      h5 {
+        margin-bottom: 12px;
+      }
+      
+      div {
+        width: 100%;
+        
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
