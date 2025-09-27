@@ -1,17 +1,6 @@
 # EventMate — Intelligent Participant Experience (IPX) Hub
 
-\<div align="center"\>
 \<p\>A complete hackathon solution that enhances the participant experience at SAP events through intelligent registration, personalized session recommendations, AI-powered assistance, and seamless check-in.\</p\>
-
-\<p\>
-\<img src="[https://img.shields.io/badge/EventMate-IPX%20Hub-0A6ED1](https://img.shields.io/badge/EventMate-IPX%20Hub-0A6ED1)" alt="EventMate" /\>
-\<img src="[https://img.shields.io/badge/Version-2.0.0-blue](https://img.shields.io/badge/Version-2.0.0-blue)" alt="Version" /\>
-\<img src="[https://img.shields.io/badge/License-Proprietary-red](https://img.shields.io/badge/License-Proprietary-red)" alt="License" /\>
-\<img src="[https://img.shields.io/badge/Platform-Web-lightgrey](https://img.shields.io/badge/Platform-Web-lightgrey)" alt="Platform" /\>
-\<img src="[https://img.shields.io/badge/Made%20with-React%20+%20Express-61DAFB](https://img.shields.io/badge/Made%20with-React%20+%20Express-61DAFB)" alt="Made with" /\>
-\<img src="[https://img.shields.io/badge/UI-Apple+SAP\_Hybrid-black](https://img.shields.io/badge/UI-Apple+SAP_Hybrid-black)" alt="UI Design" /\>
-\</p\>
-\</div\>
 
 -----
 
