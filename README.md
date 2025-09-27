@@ -1,154 +1,117 @@
 # EventMate — Intelligent Participant Experience (IPX) Hub
 
-\<p\>A complete hackathon solution that enhances the participant experience at SAP events through intelligent registration, personalized session recommendations, AI-powered assistance, and seamless check-in.\</p\>
+A complete hackathon solution that enhances participant experience at SAP events through **intelligent registration**, **personalized session recommendations**, **AI-powered assistance**, and **secure check-in**.
 
------
+---
 
-### 🌟 Overview
+## 🌟 Overview
 
-EventMate is a comprehensive event management platform designed specifically for SAP events and hackathons. It provides a seamless, end-to-end experience for attendees, from registration and personalized agenda management to secure check-in and intelligent assistance. The platform uses AI to deliver smart recommendations and a conversational chatbot, ensuring attendees get the most out of their event.
+**EventMate** is a next-gen event companion platform designed for **SAP hackathons and conferences**.  
+It provides a seamless, **end-to-end attendee journey**: from registration and personalized agenda management to secure QR check-in and AI-powered assistance.
 
-\<div align="center"\>
-\<img src="./docs/banner.png" alt="EventMate Banner" /\>
-\</div\>
+✨ **Why EventMate?**
+- Attendees often face **long queues, session overload, and missed networking opportunities**.  
+- EventMate solves this by delivering **AI-driven personalization, smart check-in, and intelligent support**, making every attendee’s journey smoother and smarter.  
 
------
+<div align="center">
+  <img src="./docs/banner.png" alt="EventMate Banner" width="80%" />
+</div>
 
-### ✨ Key Features
+---
 
-  * **Intelligent Registration:** A dynamic, multi-step form with real-time validation to capture attendee interests and personalize their experience.
-  * **AI-Powered Concierge:** The **SIT Concierge** chatbot, powered by **Google's Gemini LLM**, provides instant, context-aware answers to participant questions.
-  * **Personalized Agenda:** Recommends sessions and workshops based on an attendee's registered interests and behavior, helping them navigate the event efficiently.
-  * **Secure Check-in:** Uses **HMAC-signed QR codes** to ensure a quick, secure, and tamper-proof check-in process at the venue.
-  * **Networking Assistant:** Facilitates connections between attendees by identifying and suggesting individuals with similar backgrounds and interests.
-  * **Event Management Dashboard:** A comprehensive **Admin Dashboard** for event organizers to manage attendees, monitor check-in status, and access event statistics.
-  * **Seamless Integration:** Allows attendees to easily export their personalized session schedule to popular calendar applications like **iCalendar, Google Calendar, and Outlook**.
-  * **Mobile-Responsive Design:** Optimized to provide a consistent and intuitive experience across all devices.
+## ✨ Key Features
 
------
+- ✅ **Intelligent Registration**  
+  Multi-step form (Student / Professional) with real-time validation and personalized flow.  
 
-### 🛠️ Technical Stack
+- ✅ **AI-Powered Concierge**  
+  *SIT Concierge Chatbot* powered by **Google Gemini LLM** — instant answers to FAQs, sessions, speakers, and venues.  
 
-EventMate is built with a modern, scalable **MERN-like stack**.
+- ✅ **Personalized Agenda Builder**  
+  Smart recommendations based on attendee’s interests, with no overlapping/conflicting sessions.  
 
-#### **Frontend**
+- ✅ **Secure Check-in**  
+  **HMAC-signed QR codes** for fast, tamper-proof event check-in.  
 
-  * **Framework:** React
-  * **Styling:** Tailwind CSS with a custom SAP-inspired UI theme
-  * **Animation:** Framer Motion
-  * **Routing:** React Router
-  * **State Management:** React Context API & Hooks
-  * **Form Handling:** React Hook Form
-  * **Testing:** Jest & React Testing Library
+- ✅ **Smart Networking Assistant**  
+  AI-suggested attendee matches with optional LinkedIn/X/Instagram connect.  
 
-#### **Backend**
+- ✅ **Organizer Dashboard**  
+  Real-time view of registrations, check-ins, and attendee lists with CSV export.  
 
-  * **Server:** Express.js
-  * **Authentication:** Custom HMAC implementation for QR codes
-  * **AI Integration:** Google Gemini API
-  * **Data Storage:** File-based mock database (`db.json`) with an architecture ready for migration to a relational database like SAP HANA
-  * **Testing:** Jest
+- ✅ **Seamless Integrations**  
+  - Google Calendar export (ICS + OAuth)  
+  - Gemini API for chatbot  
+  - SAP HANA-ready backend (roadmap)  
 
------
+- ✅ **Mobile-Responsive Design**  
+  SAP + Apple-inspired UI (React + Tailwind + Framer Motion).  
 
-### 📸 Application Screenshots
+---
+
+## 🛠️ Technical Stack
+
+### Frontend
+- **Framework:** React  
+- **Styling:** Tailwind CSS (SAP theme)  
+- **Animations:** Framer Motion  
+- **Routing:** React Router  
+- **Forms:** React Hook Form  
+- **State:** Context API + Hooks  
+- **Testing:** Jest + React Testing Library  
+
+### Backend
+- **Server:** Express.js  
+- **Data:** `db.json` (Phase 1 mock DB) → scalable to Firebase / SAP HANA  
+- **AI Integration:** Google Gemini API  
+- **QR Security:** HMAC-signed QR codes  
+- **Testing:** Jest + Supertest  
+
+---
+
+## 📸 Screenshots
 
 | Landing Page | Registration | Dashboard |
 |:---:|:---:|:---:|
-|  |  |  |
-| **SIT Concierge** | **Check-in Portal** | **Admin View** |
-|  |  |  |
+| ![](./docs/screenshots/landing.png) | ![](./docs/screenshots/register.png) | ![](./docs/screenshots/dashboard.png) |
+| **SIT Concierge** | **Check-in Portal** | **Admin Dashboard** |
+| ![](./docs/screenshots/chatbot.png) | ![](./docs/screenshots/checkin.png) | ![](./docs/screenshots/admin.png) |
 
------
+---
 
-### 🏗️ Architecture
+## 🏗️ Architecture
 
-The application follows a standard client-server architecture, ensuring a clear separation of concerns.
+EventMate follows a **modular client–server architecture**:
 
-\<div align="center"\>
-\<img src="./docs/architecture.png" alt="Architecture Diagram" /\>
-\</div\>
+<div align="center">
+  <img src="./docs/architecture.png" alt="Architecture Diagram" width="80%" />
+</div>
 
-  * **Frontend Layer:** The React application provides the user interface and handles client-side logic.
-  * **Backend Layer:** The Express.js server exposes RESTful API endpoints for data management and business logic.
-  * **AI Service Layer:** Manages integration with the Google Gemini API for the chatbot and recommendation engine.
-  * **Data Layer:** A simple JSON-based file system stores attendee and event data, allowing for rapid prototyping.
+- **Frontend Layer:** React (UI, state, routing)  
+- **Backend Layer:** Express (REST APIs, business logic, QR generation)  
+- **AI Layer:** Gemini LLM for chatbot + recommendations  
+- **Data Layer:** JSON mock DB → migration-ready to SAP HANA / Firebase  
 
------
+---
 
-### 🚀 Getting Started
+## 🚀 Getting Started
 
-#### **Prerequisites**
+### Prerequisites
+- Node.js v18+  
+- npm or yarn  
 
-  * Node.js (v14.0.0 or newer)
-  * npm or yarn
+### Installation
+```bash
+git clone https://github.com/yourusername/eventmate.git
+cd eventmate
+🔒 Security Features
+	•	HMAC Signatures — secure, tamper-proof QR codes.
+	•	Environment Variables — secrets never stored in code.
+	•	Input Validation — strong server-side validation for all registration data.
 
-#### **Installation**
+⸻
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/eventmate.git
-    cd eventmate
-    ```
-2.  **Install backend dependencies:**
-    ```bash
-    cd backend
-    npm install
-    ```
-3.  **Install frontend dependencies:**
-    ```bash
-    cd ../frontend
-    npm install
-    ```
-4.  **Configure environment variables:**
-    Create a `.env` file in the **backend** directory and add the following:
-    ```
-    PORT=5000
-    HMAC_SECRET=your_secure_hmac_secret_for_qr_code_signing
-    GEMINI_API_KEY=your_gemini_api_key_here
-    NODE_ENV=development
-    ```
-
-#### **Running the Application**
-
-1.  **Start the backend server:**
-    ```bash
-    cd backend
-    npm start
-    ```
-2.  **Start the frontend development server:**
-    ```bash
-    cd ../frontend
-    npm start
-    ```
-3.  Open your browser and navigate to `http://localhost:3000`.
-
------
-
-### 🔒 Security Features
-
-  * **HMAC Signatures:** All QR codes are cryptographically signed to prevent tampering and ensure the integrity of attendee data.
-  * **Input Validation:** All user inputs are validated on the server to prevent security vulnerabilities.
-  * **Environment Variables:** Sensitive information, such as API keys and secrets, is stored in environment variables, not in the codebase.
-
------
-
-### 🛣️ Roadmap
-
-  * **Q4 2025:** Develop a native mobile application with offline support for check-in.
-  * **Q1 2026:** Implement a robust analytics dashboard with detailed insights for event organizers.
-  * **Q2 2026:** Integrate with SAP SuccessFactors for enhanced enterprise event management.
-  * **Q3 2026:** Introduce multi-language support with AI-powered translation for the chatbot.
-
------
-
-### 📄 License
-
-This project is proprietary and not licensed for public use without explicit permission.
-
------
-
-\<div align="center"\>
-\<p\>Built with ❤️ for enhancing SAP event experiences\</p\>
-\<p\>© 2025 EventMate\</p\>
-\</div\>
+🛣️ Roadmap
+	•	Phase 1 (Hackathon PoC) — Mock DB, core flows, AI fallback.
+	•	Phase 2 (MVP) — Full Gemini chatbot integration, Google Calendar sync, Firebase Auth.
+	•	Phase 3 (Production) — SAP HANA migration, enterprise analytics, SuccessFactors integration.
