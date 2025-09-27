@@ -86,9 +86,9 @@ describe('ChatbotInterface', () => {
       />
     );
     
-    // Get input field and submit button
+    // Get input field and form
     const inputField = screen.getByPlaceholderText('Type your message...');
-    const form = inputField.closest('form');
+    const form = screen.getByRole('textbox').closest('form');
     
     // Type a message
     fireEvent.change(inputField, { target: { value: 'Where is the main hall?' } });
@@ -135,10 +135,7 @@ describe('ChatbotInterface', () => {
     );
     
     // Check if loading indicator is displayed
-    // This would depend on how you've implemented the loading state
-    // For example, if you're using a specific data-testid for the loading indicator
-    const loadingIndicator = document.querySelector('.w-2.h-2.rounded-full.bg-gray-400');
-    expect(loadingIndicator).toBeInTheDocument();
+    expect(screen.getByTestId('loading-indicator')).toBeInTheDocument();
   });
   
   test('toggles expansion state when header is clicked', () => {
@@ -152,7 +149,7 @@ describe('ChatbotInterface', () => {
     );
     
     // Get header element
-    const header = screen.getByText('SIT Concierge').closest('div');
+    const header = screen.getByText('SIT Concierge');
     
     // Initial state should be expanded (input field visible)
     expect(screen.getByPlaceholderText('Type your message...')).toBeInTheDocument();

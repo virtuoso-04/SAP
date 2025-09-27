@@ -58,7 +58,7 @@ const ForYouCarousel = ({ recommendations, loading = false, error = null }) => {
       
       return () => clearInterval(timer);
     }
-  }, [loading, recommendations, activeIndex]);
+  }, [loading, recommendations, activeIndex, handleNextSlide]);
   
   // Show loading state
   if (loading) {

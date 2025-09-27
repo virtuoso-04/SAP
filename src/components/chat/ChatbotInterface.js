@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 /**
  * ChatMessage component for rendering individual chat messages
@@ -134,7 +134,7 @@ const ChatSuggestion = ({ text, onClick }) => {
  */
 const LoadingIndicator = () => {
   return (
-    <div className="flex items-center space-x-1 px-4 py-2 rounded-apple-lg bg-gray-100 text-gray-800 w-16">
+    <div className="flex items-center space-x-1 px-4 py-2 rounded-apple-lg bg-gray-100 text-gray-800 w-16" data-testid="loading-indicator">
       <motion.div
         className="w-2 h-2 rounded-full bg-gray-400"
         animate={{ scale: [1, 1.5, 1] }}
@@ -177,7 +177,11 @@ const ChatbotInterface = ({
   
   // Auto-scroll to bottom on new messages
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    try {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } catch (error) {
+      // Ignore scrollIntoView errors in test environments (jsdom doesn't support it)
+    }
   }, [messages, isLoading]);
   
   // Handle form submit
@@ -210,17 +214,6 @@ const ChatbotInterface = ({
   };
   
   // Animation variants
-  const chatVariants = {
-    expanded: {
-      height: 'calc(100% - 2rem)',
-      opacity: 1
-    },
-    collapsed: {
-      height: '3.5rem',
-      opacity: 0.9
-    }
-  };
-  
   const headerVariants = {
     expanded: {
       borderRadius: '1rem 1rem 0 0'

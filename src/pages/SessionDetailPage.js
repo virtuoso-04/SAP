@@ -10,7 +10,6 @@ const SessionDetailPage = () => {
   const navigate = useNavigate();
   
   const [session, setSession] = useState(null);
-  const [attendee, setAttendee] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
@@ -41,7 +40,6 @@ const SessionDetailPage = () => {
         const attendeeId = getAttendeeId();
         if (attendeeId) {
           const attendeeData = await apiService.getAttendee(attendeeId);
-          setAttendee(attendeeData);
           
           // Check if this session is in attendee's registered_sessions
           setIsRegistered(
@@ -79,14 +77,11 @@ const SessionDetailPage = () => {
       // Update local state
       setIsRegistered(true);
       
-      // Update attendee data in state
-      const updatedAttendee = await apiService.getAttendee(attendeeId);
-      setAttendee(updatedAttendee);
-      
       // Update localStorage
       const registrationData = localStorage.getItem('registrationData');
       if (registrationData) {
         const data = JSON.parse(registrationData);
+        const updatedAttendee = await apiService.getAttendee(attendeeId);
         data.attendee = updatedAttendee;
         localStorage.setItem('registrationData', JSON.stringify(data));
       }
@@ -114,14 +109,11 @@ const SessionDetailPage = () => {
       // Update local state
       setIsRegistered(false);
       
-      // Update attendee data in state
-      const updatedAttendee = await apiService.getAttendee(attendeeId);
-      setAttendee(updatedAttendee);
-      
       // Update localStorage
       const registrationData = localStorage.getItem('registrationData');
       if (registrationData) {
         const data = JSON.parse(registrationData);
+        const updatedAttendee = await apiService.getAttendee(attendeeId);
         data.attendee = updatedAttendee;
         localStorage.setItem('registrationData', JSON.stringify(data));
       }

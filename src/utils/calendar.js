@@ -159,10 +159,6 @@ export const createOutlookCalendarUrl = (session) => {
   const start = new Date(session.start_time);
   const end = new Date(session.end_time);
   
-  // Format dates for Outlook Calendar
-  const startISO = start.toISOString().replace(/-|:|\.\d+/g, '');
-  const endISO = end.toISOString().replace(/-|:|\.\d+/g, '');
-  
   const url = new URL('https://outlook.office.com/calendar/0/deeplink/compose');
   url.searchParams.append('subject', session.title);
   url.searchParams.append('startdt', start.toISOString());
