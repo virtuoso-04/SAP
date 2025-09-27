@@ -1,19 +1,20 @@
 # EventMate — Intelligent Participant Experience (IPX) Hub
 
+<<<<<<< HEAD
+# EventMate — Intelligent Participant Experience (IPX) Hub
+
 <div align="center">
   <p>A complete hackathon solution that enhances the participant experience at SAP events through intelligent registration, personalized session recommendations, AI-powered assistance, and seamless check-in.</p>
-  
+
   <p>
     <img src="https://img.shields.io/badge/EventMate-IPX%20Hub-0A6ED1" alt="EventMate" />
     <img src="https://img.shields.io/badge/Version-2.0.0-blue" alt="Version" />
     <img src="https://img.shields.io/badge/License-Proprietary-red" alt="License" />
     <img src="https://img.shields.io/badge/Platform-Web-lightgrey" alt="Platform" />
-    <img src="https://img.shields.io/badge/Made%20with-React%20+%20Express-61DAFB" alt="Made with" />
+    <img src="https://img.shields.io/badge/Made%20with-React%20+%20Vercel-61DAFB" alt="Made with" />
     <img src="https://img.shields.io/badge/UI-Apple+SAP_Hybrid-black" alt="UI Design" />
   </p>
 
-  <img src="./docs/banner.png" alt="EventMate Banner" />
-  
   <p>EventMate is an intelligent event management platform designed specifically for SAP events. It provides a seamless end-to-end experience for attendees, from registration to check-in and session management, with AI-powered personalized recommendations and intelligent assistance.</p>
 </div>
 
@@ -392,6 +393,142 @@ Set these in your Vercel dashboard if needed:
 ---
 
 ## �📄 License
+
+This project is proprietary and not licensed for public use without explicit permission.
+=======
+A complete hackathon solution that enhances participant experience at SAP events through **intelligent registration**, **personalized session recommendations**, **AI-powered assistance**, and **secure check-in**.
+>>>>>>> 4177df2270306498d53c4796d6c5d85efeba2ec2
+
+## 🚀 Vercel Deployment Guide
+
+EventMate is now configured for seamless deployment on Vercel!
+
+### Quick Deploy Steps:
+
+1. **Fork this repository** on GitHub
+2. **Go to [vercel.com](https://vercel.com)** and sign up/login
+3. **Click "Import Project"** and connect your GitHub repository
+4. **Vercel will automatically detect** the React app and serverless functions
+5. **Deploy!** Your app will be live at `https://your-project-name.vercel.app`
+
+### Project Structure for Vercel:
+
+- **Frontend**: React app in the root directory
+- **API**: Serverless functions in the `/api` directory
+- **Database**: JSON file-based (easily upgradeable to any database)
+- **Configuration**: `vercel.json` handles routing and builds
+
+### Environment Variables (Optional):
+
+Set these in your Vercel dashboard if needed:
+- `REACT_APP_API_URL`: Defaults to `/api` for relative URLs
+
+### Features Ready for Production:
+
+✅ **Serverless API** - No server management needed  
+✅ **Global CDN** - Fast loading worldwide  
+✅ **Automatic HTTPS** - SSL certificates included  
+✅ **Custom Domain** - Easy domain setup  
+✅ **Analytics** - Built-in performance monitoring  
+
+---
+
+## 🏗️ Architecture
+
+EventMate follows a **modular client–server architecture**:
+
+- **Frontend Layer:** React components with responsive UI/UX design
+- **Backend Layer:** Vercel Serverless Functions (REST APIs, business logic, QR generation)
+- **AI Layer:** Gemini LLM for chatbot + recommendations
+- **Data Layer:** JSON mock DB → migration-ready to SAP HANA / Firebase
+
+---
+
+## 🛠️ Technical Stack
+
+### Frontend
+- **Framework:** React.js
+- **Routing:** React Router v6
+- **Styling:** Tailwind CSS with custom SAP UI Theme
+- **Animation:** Framer Motion
+- **State Management:** React Context API & Hooks
+- **Form Handling:** React Hook Form
+- **Testing:** Jest & React Testing Library
+
+### Backend
+- **Server:** Vercel Serverless Functions (Node.js)
+- **Database:** JSON file-based (easily replaceable with any database)
+- **Authentication:** HMAC-SHA256 signature for QR codes
+- **AI Integration:** Google Gemini API
+- **Testing:** Jest for API endpoints
+
+---
+
+## ✨ Key Features
+
+- ✅ **Intelligent Registration** - Multi-step form with real-time validation
+- ✅ **AI-Powered Concierge** - SIT Chatbot using Google's Gemini LLM
+- ✅ **Personalized Agenda Builder** - Smart recommendations based on interests
+- ✅ **Secure Check-in** - HMAC-signed QR codes for tamper-proof access
+- ✅ **Smart Networking Assistant** - AI-suggested attendee matches
+- ✅ **Calendar Integration** - Export to Google Calendar and ICS
+- ✅ **Admin Dashboard** - Real-time analytics and attendee management
+- ✅ **Mobile-Responsive Design** - Optimized for all devices
+
+---
+
+## � Application Screens
+
+| Landing Page | Registration | Dashboard |
+|:---:|:---:|:---:|
+| ![Landing](./docs/screenshots/landing.png) | ![Registration](./docs/screenshots/registration.png) | ![Dashboard](./docs/screenshots/dashboard.png) |
+
+| SIT Concierge | Check-in Portal | Admin View |
+|:---:|:---:|:---:|
+| ![Chatbot](./docs/screenshots/chatbot.png) | ![Checkin](./docs/screenshots/checkin.png) | ![Admin](./docs/screenshots/admin.png) |
+
+---
+
+## � Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+### Installation
+```bash
+git clone https://github.com/yourusername/eventmate.git
+cd eventmate
+npm install
+```
+
+### Running Locally
+```bash
+npm start
+```
+Open your browser to `http://localhost:3000`
+
+---
+
+## � Security Features
+
+- **HMAC Signatures** - All QR codes are cryptographically signed
+- **Environment Variables** - Sensitive data never stored in code
+- **Input Validation** - Strong server-side validation for all data
+- **Security Headers** - Proper HTTP headers to prevent vulnerabilities
+
+---
+
+## 🛣️ Roadmap
+
+- [ ] **Q4 2025**: Mobile app with offline support
+- [ ] **Q1 2026**: Advanced analytics dashboard
+- [ ] **Q2 2026**: Integration with SAP SuccessFactors
+- [ ] **Q3 2026**: Multi-language support with AI translation
+
+---
+
+## 📄 License
 
 This project is proprietary and not licensed for public use without explicit permission.
 
